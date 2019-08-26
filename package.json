@@ -1,16 +1,16 @@
 {
     "name": "baidu-aip-sdk-ts",
     "version": "2.3.10",
-    "description": "百度AI开放平台Nodejs SDK, 文档以及详情请访问官网: https://ai.baidu.com",
+    "description": "百度AI开放平台Nodejs SDK, 文档以及详情请访问官网: https://ai.baidu.com，已重新构成typescript",
     "main": "src/index.js",
     "scripts": {
         "test": "mocha"
     },
-    "author": "baidu-aip",
+    "author": "like",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Baidu-AIP/nodejs-sdk.git"
+        "url": "https://github.com/StormKid/baidu-aip-sdk-ts"
     },
     "dependencies": {
         "babel-polyfill": "^6.26.0",
