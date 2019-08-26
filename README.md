@@ -39,7 +39,7 @@
 **直接使用npm安装依赖：**
 
 ```
-npm install baidu-aip-sdk-ts
+npm install baidu-aip-sdk-tsd
 ```
 
 # 详细使用文档
