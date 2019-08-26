@@ -34,14 +34,14 @@ declare interface HttpClientNlp {
 	 * @param options 
 	 * @return  
 	 */
-	req(options : HttpClientNlp.prototype.Req0): /* HttpClientNlp.prototype.+Promise */ any;
+	req(options : HttpClientNlp.prototype.Req0): /* HttpClientNlp.prototype.+Promise<any> */ any;
 		
 	/**
 	 * 
 	 * @param requestInfo 
 	 * @return  
 	 */
-	postWithInfo(requestInfo : any): Promise;
+	postWithInfo(requestInfo : any): Promise<any>;
 		
 	/**
 	 * 

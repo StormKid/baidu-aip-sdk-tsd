@@ -134,13 +134,13 @@ declare interface AipFace {
 	 *   face_field 包括**age,beauty,expression,faceshape,gender,glasses,landmark,race,quality,facetype信息**  <br> 逗号分隔. 默认只返回face_token、人脸框、概率和旋转角度
 	 *   max_face_num 最多处理人脸的数目，默认值为1，仅检测图片中面积最大的那个人脸；**最大值10**，检测图片中面积最大的几张人脸。
 	 *   face_type 人脸的类型 **LIVE**表示生活照：通常为手机、相机拍摄的人像图片、或从网络获取的人像图片等**IDCARD**表示身份证芯片照：二代身份证内置芯片中的人像照片 **WATERMARK**表示带水印证件照：一般为带水印的小图，如公安网小图 **CERT**表示证件照片：如拍摄的身份证、工卡、护照、学生证等证件图片 默认**LIVE**
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param image 
 	 * @param imageType 
 	 * @param options 
 	 * @return  
 	 */
-	detect(image : string, imageType : string, options : any): Promise;
+	detect(image : string, imageType : string, options : any): Promise<any>;
 		
 	/**
 	 * 人脸搜索接口
@@ -154,14 +154,14 @@ declare interface AipFace {
 	 *   liveness_control 活体检测控制  **NONE**: 不进行控制 **LOW**:较低的活体要求(高通过率 低攻击拒绝率) **NORMAL**: 一般的活体要求(平衡的攻击拒绝率, 通过率) **HIGH**: 较高的活体要求(高攻击拒绝率 低通过率) **默认NONE**
 	 *   user_id 当需要对特定用户进行比对时，指定user_id进行比对。即人脸认证功能。
 	 *   max_user_num 查找后返回的用户数量。返回相似度最高的几个用户，默认为1，最多返回20个。
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param image 
 	 * @param imageType 
 	 * @param groupIdList 
 	 * @param options 
 	 * @return  
 	 */
-	search(image : string, imageType : string, groupIdList : string, options : any): Promise;
+	search(image : string, imageType : string, groupIdList : string, options : any): Promise<any>;
 		
 	/**
 	 * 人脸注册接口
@@ -175,7 +175,7 @@ declare interface AipFace {
 	 *   user_info 用户资料，长度限制256B
 	 *   quality_control 图片质量控制  **NONE**: 不进行控制 **LOW**:较低的质量要求 **NORMAL**: 一般的质量要求 **HIGH**: 较高的质量要求 **默认 NONE**
 	 *   liveness_control 活体检测控制  **NONE**: 不进行控制 **LOW**:较低的活体要求(高通过率 低攻击拒绝率) **NORMAL**: 一般的活体要求(平衡的攻击拒绝率, 通过率) **HIGH**: 较高的活体要求(高攻击拒绝率 低通过率) **默认NONE**
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param image 
 	 * @param imageType 
 	 * @param groupId 
@@ -183,7 +183,7 @@ declare interface AipFace {
 	 * @param options 
 	 * @return  
 	 */
-	addUser(image : string, imageType : string, groupId : string, userId : string, options : any): Promise;
+	addUser(image : string, imageType : string, groupId : string, userId : string, options : any): Promise<any>;
 		
 	/**
 	 * 人脸更新接口
@@ -197,7 +197,7 @@ declare interface AipFace {
 	 *   user_info 用户资料，长度限制256B
 	 *   quality_control 图片质量控制  **NONE**: 不进行控制 **LOW**:较低的质量要求 **NORMAL**: 一般的质量要求 **HIGH**: 较高的质量要求 **默认 NONE**
 	 *   liveness_control 活体检测控制  **NONE**: 不进行控制 **LOW**:较低的活体要求(高通过率 低攻击拒绝率) **NORMAL**: 一般的活体要求(平衡的攻击拒绝率, 通过率) **HIGH**: 较高的活体要求(高攻击拒绝率 低通过率) **默认NONE**
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param image 
 	 * @param imageType 
 	 * @param groupId 
@@ -205,7 +205,7 @@ declare interface AipFace {
 	 * @param options 
 	 * @return  
 	 */
-	updateUser(image : string, imageType : string, groupId : string, userId : string, options : any): Promise;
+	updateUser(image : string, imageType : string, groupId : string, userId : string, options : any): Promise<any>;
 		
 	/**
 	 * 人脸删除接口
@@ -215,14 +215,14 @@ declare interface AipFace {
 	 * @param {string} faceToken - 需要删除的人脸图片token，（由数字、字母、下划线组成）长度限制64B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param userId 
 	 * @param groupId 
 	 * @param faceToken 
 	 * @param options 
 	 * @return  
 	 */
-	faceDelete(userId : string, groupId : string, faceToken : string, options : any): Promise;
+	faceDelete(userId : string, groupId : string, faceToken : string, options : any): Promise<any>;
 		
 	/**
 	 * 用户信息查询接口
@@ -231,13 +231,13 @@ declare interface AipFace {
 	 * @param {string} groupId - 用户组id（由数字、字母、下划线组成），长度限制128B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param userId 
 	 * @param groupId 
 	 * @param options 
 	 * @return  
 	 */
-	getUser(userId : string, groupId : string, options : any): Promise;
+	getUser(userId : string, groupId : string, options : any): Promise<any>;
 		
 	/**
 	 * 获取用户人脸列表接口
@@ -246,13 +246,13 @@ declare interface AipFace {
 	 * @param {string} groupId - 用户组id（由数字、字母、下划线组成），长度限制128B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param userId 
 	 * @param groupId 
 	 * @param options 
 	 * @return  
 	 */
-	faceGetlist(userId : string, groupId : string, options : any): Promise;
+	faceGetlist(userId : string, groupId : string, options : any): Promise<any>;
 		
 	/**
 	 * 获取用户列表接口
@@ -262,12 +262,12 @@ declare interface AipFace {
 	 * @description options - options列表:
 	 *   start 默认值0，起始序号
 	 *   length 返回数量，默认值100，最大值1000
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param groupId 
 	 * @param options 
 	 * @return  
 	 */
-	getGroupUsers(groupId : string, options : any): Promise;
+	getGroupUsers(groupId : string, options : any): Promise<any>;
 		
 	/**
 	 * 复制用户接口
@@ -277,12 +277,12 @@ declare interface AipFace {
 	 * @description options - options列表:
 	 *   src_group_id 从指定组里复制信息
 	 *   dst_group_id 需要添加用户的组id
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param userId 
 	 * @param options 
 	 * @return  
 	 */
-	userCopy(userId : string, options : any): Promise;
+	userCopy(userId : string, options : any): Promise<any>;
 		
 	/**
 	 * 删除用户接口
@@ -291,13 +291,13 @@ declare interface AipFace {
 	 * @param {string} userId - 用户id（由数字、字母、下划线组成），长度限制128B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param groupId 
 	 * @param userId 
 	 * @param options 
 	 * @return  
 	 */
-	deleteUser(groupId : string, userId : string, options : any): Promise;
+	deleteUser(groupId : string, userId : string, options : any): Promise<any>;
 		
 	/**
 	 * 创建用户组接口
@@ -305,12 +305,12 @@ declare interface AipFace {
 	 * @param {string} groupId - 用户组id（由数字、字母、下划线组成），长度限制128B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param groupId 
 	 * @param options 
 	 * @return  
 	 */
-	groupAdd(groupId : string, options : any): Promise;
+	groupAdd(groupId : string, options : any): Promise<any>;
 		
 	/**
 	 * 删除用户组接口
@@ -318,12 +318,12 @@ declare interface AipFace {
 	 * @param {string} groupId - 用户组id（由数字、字母、下划线组成），长度限制128B
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param groupId 
 	 * @param options 
 	 * @return  
 	 */
-	groupDelete(groupId : string, options : any): Promise;
+	groupDelete(groupId : string, options : any): Promise<any>;
 		
 	/**
 	 * 组列表查询接口
@@ -332,11 +332,11 @@ declare interface AipFace {
 	 * @description options - options列表:
 	 *   start 默认值0，起始序号
 	 *   length 返回数量，默认值100，最大值1000
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param options 
 	 * @return  
 	 */
-	getGrouplist(options : any): Promise;
+	getGrouplist(options : any): Promise<any>;
 		
 	/**
 	 * 身份验证接口
@@ -349,7 +349,7 @@ declare interface AipFace {
 	 * @description options - options列表:
 	 *   quality_control 图片质量控制  **NONE**: 不进行控制 **LOW**:较低的质量要求 **NORMAL**: 一般的质量要求 **HIGH**: 较高的质量要求 **默认 NONE**
 	 *   liveness_control 活体检测控制  **NONE**: 不进行控制 **LOW**:较低的活体要求(高通过率 低攻击拒绝率) **NORMAL**: 一般的活体要求(平衡的攻击拒绝率, 通过率) **HIGH**: 较高的活体要求(高攻击拒绝率 低通过率) **默认NONE**
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param image 
 	 * @param imageType 
 	 * @param idCardNumber 
@@ -357,7 +357,7 @@ declare interface AipFace {
 	 * @param options 
 	 * @return  
 	 */
-	personVerify(image : string, imageType : string, idCardNumber : string, name : string, options : any): Promise;
+	personVerify(image : string, imageType : string, idCardNumber : string, name : string, options : any): Promise<any>;
 		
 	/**
 	 * 语音校验码接口接口
@@ -365,17 +365,17 @@ declare interface AipFace {
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
 	 *   appid 百度云创建应用时的唯一标识ID
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param options 
 	 * @return  
 	 */
-	videoSessioncode(options : any): Promise;
+	videoSessioncode(options : any): Promise<any>;
 		
 	/**
 	 * 在线活体检测
 	 * 
 	 * @param {Object} param - 参数对象数组
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * > 说明：两张图片的对象举例：
 	 * >
 	 * > [
@@ -393,13 +393,13 @@ declare interface AipFace {
 	 * @param object 
 	 * @return  
 	 */
-	faceverify(object : any): Promise;
+	faceverify(object : any): Promise<any>;
 		
 	/**
 	 * 人脸比对接口
 	 * 
 	 * @param {Object} param - 参数对象数组
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * > 说明：两张图片的对象举例：
 	 * >
 	 * > [
@@ -421,6 +421,6 @@ declare interface AipFace {
 	 * @param object 
 	 * @return  
 	 */
-	match(object : any): Promise;
+	match(object : any): Promise<any>;
 }
 declare var AipFace: AipFace;

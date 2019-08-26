@@ -106,13 +106,13 @@ declare interface AipImageCensor {
 	 * 
 	 * @param param 
 	 */
-	commonImpl(param : {} | CommonImpl0): /* void */ any;
+	commonImpl(param : {} | any): /* void */ any;
 		
 	/**
 	 * 
 	 * @param param 
 	 */
-	jsonRequestImpl(param : {} | JsonRequestImpl0): /* void */ any;
+	jsonRequestImpl(param: {} | any): /* void */ any;
 		
 	/**
 	 * 

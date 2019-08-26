@@ -45,7 +45,7 @@ declare interface HttpClient {
 	 * @param options 
 	 * @return  
 	 */
-	req<T>(options : HttpClient.prototype.Req0): Promise<T>;
+	req(options : HttpClient.prototype.Req0): Promise<any>;
 		
 	/**
 	 * 用来设置request库的参数，会覆盖所有options，设置时请确保你知道它的作用
@@ -70,4 +70,4 @@ declare interface HttpClient {
 	 */
 	DEFAULT_TIMEOUT : number;
 }
-declare var HttpClient: HttpClient;
+declare const HttpClient: HttpClient;

@@ -95,7 +95,7 @@ declare interface AipKg {
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
 	 *   limit_count 限制解析数量limit_count为0时进行全量任务，limit_count&gt;0时只解析limit_count数量的页面
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param name 
 	 * @param templateContent 
 	 * @param inputMappingFile 
@@ -104,7 +104,7 @@ declare interface AipKg {
 	 * @param options 
 	 * @return  
 	 */
-	createTask(name : string, templateContent : string, inputMappingFile : string, outputFile : string, urlPattern : string, options : any): Promise;
+	createTask(name : string, templateContent : string, inputMappingFile : string, outputFile : string, urlPattern : string, options : any): Promise<any>;
 		
 	/**
 	 * 更新任务接口
@@ -117,12 +117,12 @@ declare interface AipKg {
 	 *   input_mapping_file 抓取结果映射文件的路径
 	 *   url_pattern url pattern
 	 *   output_file 输出文件名字
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param id 
 	 * @param options 
 	 * @return  
 	 */
-	updateTask(id : number, options : any): Promise;
+	updateTask(id : number, options : any): Promise<any>;
 		
 	/**
 	 * 获取任务详情接口
@@ -130,12 +130,12 @@ declare interface AipKg {
 	 * @param {integer} id - 任务ID
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param id 
 	 * @param options 
 	 * @return  
 	 */
-	getTaskInfo(id : number, options : any): Promise;
+	getTaskInfo(id : number, options : any): Promise<any>;
 		
 	/**
 	 * 以分页的方式查询当前用户所有的任务信息接口
@@ -147,11 +147,11 @@ declare interface AipKg {
 	 *   status 要筛选的任务状态
 	 *   page 页码
 	 *   per_page 页码
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param options 
 	 * @return  
 	 */
-	getUserTasks(options : any): Promise;
+	getUserTasks(options : any): Promise<any>;
 		
 	/**
 	 * 启动任务接口
@@ -159,12 +159,12 @@ declare interface AipKg {
 	 * @param {integer} id - 任务ID
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param id 
 	 * @param options 
 	 * @return  
 	 */
-	startTask(id : number, options : any): Promise;
+	startTask(id : number, options : any): Promise<any>;
 		
 	/**
 	 * 查询任务状态接口
@@ -172,11 +172,11 @@ declare interface AipKg {
 	 * @param {integer} id - 任务ID
 	 * @param {Object} options - 可选参数对象，key: value都为string类型
 	 * @description options - options列表:
-	 * @return {Promise} - 标准Promise对象
+	 * @return {Promise<any>} - 标准Promise对象
 	 * @param id 
 	 * @param options 
 	 * @return  
 	 */
-	getTaskStatus(id : number, options : any): Promise;
+	getTaskStatus(id : number, options : any): Promise<any>;
 }
 declare var AipKg: AipKg;
