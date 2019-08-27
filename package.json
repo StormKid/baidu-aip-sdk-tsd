@@ -1,6 +1,6 @@
 {
     "name": "baidu-aip-sdk-tsd",
-    "version": "2.3.10",
+    "version": "2.3.10-rc",
     "description": "百度AI开放平台Nodejs SDK, 文档以及详情请访问官网: https://ai.baidu.com，已重新构成typescript",
     "main": "src/index.js",
     "scripts": {
